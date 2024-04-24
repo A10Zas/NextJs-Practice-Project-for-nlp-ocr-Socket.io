@@ -7,14 +7,18 @@ const MessageCard = ({ msg, userName }) => {
     <div className="text-sm flex justify-start items-center my-2">
       <div className="flex justify-center items-center gap-2 mx-2">
         <div className="rounded-xl shadow-md">
-          {user.image ? (
+          {user.image && user?.name === userName.name ? (
             <img
               src={user.image}
               alt={user.name}
               className="rounded-full w-12 h-12 mx-auto"
             />
           ) : (
-            <div>No Image Available</div>
+            <img
+              src="https://cdn.pixabay.com/photo/2015/11/03/08/56/question-mark-1019820_960_720.jpg"
+              alt={user.name}
+              className="rounded-full w-12 h-12 mx-auto"
+            />
           )}
         </div>
         <div className="capitalize">
