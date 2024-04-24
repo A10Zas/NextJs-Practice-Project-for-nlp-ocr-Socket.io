@@ -20,6 +20,8 @@ function GroupChatScrollArea() {
   const setLanguage = useGroupChatStore((state) => state.setLanguage);
   const messagesEndRef = useRef();
 
+  console.log("message", messages);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -66,7 +68,7 @@ function GroupChatScrollArea() {
           </div> */}
         </div>
         {messages.map((msg, index) => (
-          <MessageCard key={index} msg={msg} />
+          <MessageCard key={index} msg={msg.message} userName={msg.user} />
         ))}
         <div ref={messagesEndRef} />
       </div>
